@@ -4,6 +4,7 @@ site_name: DVC-NLP-ML-DL-Transformer
 nav:
   - Home: index.md
   - Data-prep-stage: data_preparation.md
+  - Feature: featurization.md
 
 site_author: Kulakirti Chakma
 site_description: >-
