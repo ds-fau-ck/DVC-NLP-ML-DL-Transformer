@@ -41,11 +41,11 @@ extra:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/TUCchkul
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/c17hawke
+      link: https://twitter.com/kulkirtichakma
     - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/c17hawke
-    - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/c17hawke/
+      link: https://linkedin.com/in/kulakirti chakma
+    #- icon: fontawesome/brands/instagram
+      #link: https://www.instagram.com/c17hawke/
 
 extra_javascript:
   - javascripts/mathjax.js
