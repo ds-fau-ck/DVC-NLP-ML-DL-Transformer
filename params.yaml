@@ -1,0 +1,4 @@
+prepare:  
+  split: 0.3
+  seed: 2022
+  
