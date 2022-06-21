@@ -1,0 +1,73 @@
+# Project information
+site_name: DVC-NLP-ML-DL-Transformer 
+# defeine TOC or order of website-
+nav:
+  - Home: index.md
+  - Data-prep-stage: data_prep.md
+
+site_author: Kulakirti Chakma
+site_description: >-
+  DESCRIPTION
+# Repository
+repo_name: TUCchkul/DVC-NLP-ML-DL-Transformer 
+repo_url: https://github.com/TUCchkul/DVC-NLP-ML-DL-Transformer 
+
+# Configuration
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+      primary: teal
+      accent: purple 
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode    
+      primary: teal
+      accent: lime    
+  # logo: PyTorch_logo_icon.svg
+  
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/TUCchkul
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/c17hawke
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/c17hawke
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/c17hawke/
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js #?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  
+  
+plugins:
+  - search
+
+copyright: |
+  &copy; 2022 <a href="https://github.com/TUCchkul"  target="_blank" rel="noopener">Kulakirti Chakma</a>
