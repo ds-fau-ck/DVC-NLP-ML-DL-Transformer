@@ -1,0 +1,18 @@
+artifacts: 
+  ARTIFACTS_DIR: artifacts 
+  PREPARED_DATA: prepared
+  TRAIN_DATA: train.tsv
+  TEST_DATA: test.csv
+  FEATURIZED_DATA: features
+  FEATURIZED_DATA_TRAIN: train.pkl
+  FEATURIZE_DATA_TEST: test.pkl
+  MODEL_DIR: model 
+  MODEL_NAME: model.pkl
+metrics: 
+  SCORES: score.json 
+plots:  
+  PRC: prc.json 
+  ROC: roc.json 
+source_data: 
+  data_dir: data   
+  data_file: data.xml
