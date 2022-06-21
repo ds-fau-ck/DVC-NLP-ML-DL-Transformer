@@ -3,7 +3,7 @@ site_name: DVC-NLP-ML-DL-Transformer
 # defeine TOC or order of website-
 nav:
   - Home: index.md
-  - Data-prep-stage: data_prepparation.md
+  - Data-prep-stage: data_preparation.md
 
 site_author: Kulakirti Chakma
 site_description: >-
