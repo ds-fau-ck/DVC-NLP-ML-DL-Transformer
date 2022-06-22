@@ -8,7 +8,7 @@ from src.utils import read_yaml,create_directories,get_df
 from src.utils.data_mgmt import process_posts
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-STAGE="Prepare_Data"
+STAGE="Featurization"## Stage changing name
 
 logging.basicConfig(
     filename=os.path.join("logs", 'running_logs.log'), 
