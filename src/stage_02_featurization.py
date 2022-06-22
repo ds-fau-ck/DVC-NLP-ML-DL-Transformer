@@ -2,10 +2,12 @@ import argparse
 import os
 import logging
 import random
-from src.utils import read_yaml,create_directories,get_df
+from src.utils import read_yaml,create_directories,get_df, save_matrix
 from src.utils.data_mgmt import process_posts
 import numpy as np
-from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer 
+
+
 STAGE="Featurization"## Stage changing name
 
 logging.basicConfig(
@@ -25,7 +27,7 @@ def main(config_path, params_path):
     train_data_path = os.path.join(prepare_data_dir_path,artifacts["TRAIN_DATA"])
     test_data_path = os.path.join(prepare_data_dir_path,artifacts["TEST_DATA"])
 
-    feturize_data_dir_path=os.path.join(artifacts[" ARTIFACTS_DIR"], artifacts["FEATURIZED_DATA"])
+    feturize_data_dir_path=os.path.join(artifacts["ARTIFACTS_DIR"], artifacts["FEATURIZED_DATA"])
     create_directories([feturize_data_dir_path])
     featurized_train_data_path=os.path.join(feturize_data_dir_path, artifacts["FEATURIZED_DATA_TRAIN"])
     featurized_test_data_path=os.path.join(feturize_data_dir_path, artifacts["FEATURIZE_DATA_TEST"])
@@ -48,16 +50,14 @@ def main(config_path, params_path):
     tfidf=TfidfTransformer(smooth_idf=False)
     tfidf.fit(train_words_binary_matrix)
     train_words_tfidf_matrix=tfidf.transform(train_words_binary_matrix)
+    save_matrix(df=df_train,matrix=train_words_tfidf_matrix,out_path=featurized_train_data_path)
 
     # for test data
     df_test=get_df(test_data_path)
     test_words=np.array(df_test.text.str.lower().values.astype("U"))
-
-   
-    
     test_words_binary_matrix=bag_of_words.transform(test_words)
-    
     test_words_tfidf_matrix=tfidf.transform(test_words_binary_matrix)
+    save_matrix(df=df_test,matrix=test_words_tfidf_matrix,out_path=featurized_test_data_path)
 
 
 
