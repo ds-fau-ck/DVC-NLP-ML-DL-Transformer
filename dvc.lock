@@ -1,0 +1,82 @@
+schema: '2.0'
+stages:
+  data_preparation:
+    cmd: python src/stage_01_prepare_data.py
+    deps:
+    - path: data/data.xml
+      md5: a304afb96060aad90176268345e10355
+      size: 37891850
+    - path: src/stage_01_prepare_data.py
+      md5: 5ced45c5b21db6d0ebd0a0c34bdea01d
+      size: 2229
+    - path: src/utils
+      md5: edfa96259cddf9d5aa9ef96d4fce82e3.dir
+      size: 5813
+      nfiles: 6
+    outs:
+    - path: artifacts/prepared
+      md5: dc639257fd7e43c167de7349d66763c4.dir
+      size: 23886351
+      nfiles: 2
+  featurization:
+    cmd: python src/stage_02_featurization.py
+    deps:
+    - path: artifacts/prepared
+      md5: dc639257fd7e43c167de7349d66763c4.dir
+      size: 23886351
+      nfiles: 2
+    - path: src/stage_02_featurization.py
+      md5: 568bfc4de21e3a06f944786d25b7e58d
+      size: 3006
+    - path: src/utils
+      md5: edfa96259cddf9d5aa9ef96d4fce82e3.dir
+      size: 5813
+      nfiles: 6
+    outs:
+    - path: artifacts/features
+      md5: 2638a56d12c43583c71dc6f020a45b54.dir
+      size: 12272480
+      nfiles: 2
+  train:
+    cmd: python src/stage_03_train.py
+    deps:
+    - path: artifacts/features/train.pkl
+      md5: 296954b676c7102e4212fa3e7d7691ed
+      size: 8558640
+    - path: src/stage_03_train.py
+      md5: e468d9de9e7562262ba4772f3bf3fd77
+      size: 2511
+    - path: src/utils
+      md5: edfa96259cddf9d5aa9ef96d4fce82e3.dir
+      size: 5813
+      nfiles: 6
+    outs:
+    - path: artifacts/model/model.pkl
+      md5: 4753dde91d321465760505101841392e
+      size: 3119312
+  evaluate:
+    cmd: python src/stage_04_evaluation.py
+    deps:
+    - path: artifacts/features/test.pkl
+      md5: 082d39185c64d407966f659a8f55a7fb
+      size: 3713840
+    - path: artifacts/model/model.pkl
+      md5: 4753dde91d321465760505101841392e
+      size: 3119312
+    - path: src/stage_04_evaluation.py
+      md5: e1bdf322580da89df61a32d9ef94b408
+      size: 3547
+    - path: src/utils
+      md5: edfa96259cddf9d5aa9ef96d4fce82e3.dir
+      size: 5813
+      nfiles: 6
+    outs:
+    - path: prc.json
+      md5: b449f598f69d72f2301e91f663c772fc
+      size: 145994
+    - path: roc.json
+      md5: 8f7a89f3f4b0462fbbd582a97c238901
+      size: 138910
+    - path: score.json
+      md5: 998d585d339f75a78e5691960b51a995
+      size: 76

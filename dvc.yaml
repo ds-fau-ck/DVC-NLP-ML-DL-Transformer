@@ -28,14 +28,14 @@ stages:
 
 
   evaluate:
-    cmd: python src/stage_04_evaluate.py
+    cmd: python src/stage_04_evaluation.py
     deps:
-    - src/stage_04_evaluate.py
+    - src/stage_04_evaluation.py
     - src/utils
     - artifacts/features/test.pkl
     - artifacts/model/model.pkl
     metrics:
-      - scores.json:
+      - score.json:
           cache: false
     plots:
       - prc.json:
