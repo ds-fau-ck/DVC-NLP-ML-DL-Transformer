@@ -30,7 +30,7 @@ def main(config_path, params_path):
     feturize_data_dir_path=os.path.join(artifacts["ARTIFACTS_DIR"], artifacts["FEATURIZED_DATA"])
     create_directories([feturize_data_dir_path])
     featurized_train_data_path=os.path.join(feturize_data_dir_path, artifacts["FEATURIZED_DATA_TRAIN"])
-    featurized_test_data_path=os.path.join(feturize_data_dir_path, artifacts["FEATURIZE_DATA_TEST"])
+    featurized_test_data_path=os.path.join(feturize_data_dir_path, artifacts["FEATURIZED_DATA_TEST"])
 
 
     max_features=params["featurize"]["max_features"]
