@@ -1,26 +1,48 @@
-stages: 
-  data_preparation: 
+stages:
+  data_preparation:
     cmd: python src/stage_01_prepare_data.py
-    deps: 
+    deps:
     - src/stage_01_prepare_data.py
-    - src/utils 
+    - src/utils
     - data/data.xml
-    outs: 
+    outs:
     - artifacts/prepared
-  featurization: 
+
+  featurization:
     cmd: python src/stage_02_featurization.py
-    deps: 
+    deps:
     - src/stage_02_featurization.py
-    - src/utils 
+    - src/utils
     - artifacts/prepared
-    outs: 
+    outs:
     - artifacts/features
-  train: 
+
+  train:
     cmd: python src/stage_03_train.py
-    deps: 
+    deps:
     - src/stage_03_train.py
-    - src/utils 
-    - artifacts/features
-    outs: 
+    - src/utils
+    - artifacts/features/train.pkl
+    outs:
     - artifacts/model/model.pkl
 
+
+  evaluate:
+    cmd: python src/stage_04_evaluate.py
+    deps:
+    - src/stage_04_evaluate.py
+    - src/utils
+    - artifacts/features/test.pkl
+    - artifacts/model/model.pkl
+    metrics:
+      - scores.json:
+          cache: false
+    plots:
+      - prc.json:
+          cache: false
+          x: recall
+          y: precision
+      - roc.json:
+          cache: false
+          x: fpr
+          y: tpr
