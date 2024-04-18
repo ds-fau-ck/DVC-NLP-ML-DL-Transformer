@@ -6,7 +6,6 @@ nav:
   - Data-prep-stage: data_preparation.md
   - Feature: featurization.md
 
-site_author: Kulakirti Chakma
 site_description: >-
   DESCRIPTION
 # Repository
