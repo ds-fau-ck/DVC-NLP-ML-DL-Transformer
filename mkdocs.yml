@@ -10,7 +10,7 @@ site_description: >-
   DESCRIPTION
 # Repository
 repo_name: TUCchkul/DVC-NLP-ML-DL-Transformer 
-repo_url: https://github.com/TUCchkul/DVC-NLP-ML-DL-Transformer 
+repo_url: https://github.com/ds-fau-ck/DVC-NLP-ML-DL-Transformer 
 
 # Configuration
 theme:
@@ -39,11 +39,9 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/TUCchkul
+      link: https://github.com/ds-fau-ck
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/kulkirtichakma
     - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/kulakirti chakma
     #- icon: fontawesome/brands/instagram
       #link: https://www.instagram.com/c17hawke/
 
